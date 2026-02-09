@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Architecture of Us — 6 Years</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <div class="blueprint-grid"></div>
+
+  <!-- Hero: Site Survey -->
+  <header class="hero" id="hero">
+    <div class="site-plan">
+      <div class="title-block" data-aos="fade-down">
+        <h1>The Architecture of Us</h1>
+        <p class="for-nickname">For <span class="nickname">P</span></p>
+        <p class="subtitle">Site Survey: 20XX</p>
+        <p class="version-badge">v6.0 — Production Stable</p>
+        <div class="happy-days-timer" id="happy-days-timer">
+          <span class="happy-days-label">Happy days</span>
+          <div class="happy-days-value">
+            <span id="rd-years">0</span>y <span id="rd-months">0</span>m <span id="rd-days">0</span>d
+            <span class="happy-days-live"><span id="rd-hours">0</span>h <span id="rd-mins">0</span>m <span id="rd-secs">0</span>s</span>
+          </div>
+        </div>
+      </div>
+      <div class="sketch-school" data-aos="fade-up">
+        <div class="school-outline">
+          <span class="label">FOUNDATION</span>
+          <p>Where we first saw each other.<br>We didn't talk much. But the site was chosen.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section: Structure (College + The Dip) -->
+  <section class="section structure" id="structure">
+    <div class="section-label">STRUCTURE</div>
+    <div class="content-wrap">
+      <div class="block commit-block" data-aos="fade-right">
+        <h2>v1.0 — Initial Commit</h2>
+        <p class="commit-msg">"First real conversation. College. Two different branches of life started merging."</p>
+        <div class="photo-placeholder commit-photo">
+          <span>Add your college photo in photos/college.jpg</span>
+        </div>
+      </div>
+      <div class="block renovation-block" data-aos="fade-left">
+        <h2>Renovation Phase</h2>
+        <p class="sub">Structural Reinforcement</p>
+        <p>We had some bugs in production. Arguments weren't failures — we refactored the code, fixed the conflicts, and made the system stronger. <code>git merge --no-ff life-hers life-mine</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phases: Architect's summary -->
+  <section class="section phases-section" id="phases">
+    <div class="section-label">PROJECT PHASES — SITE REPORT</div>
+    <div class="content-wrap phases-wrap">
+      <h2 data-aos="fade-down">Phases Our Relationship Went Through</h2>
+      <p class="phases-intro" data-aos="fade-up">Summary as recorded by the architect &amp; dev on site. Multiple iterations, one build.</p>
+      <div class="phases-list">
+        <div class="phase-item" data-aos="fade-right">
+          <span class="phase-tag">Phase 1 — Discovery</span>
+          <h3>The talking phase</h3>
+          <p>Initial site survey. Requirements gathering. Two separate blueprints started aligning; the first commits were just conversations. <code>git init</code> energy.</p>
+        </div>
+        <div class="phase-item phase-mid" data-aos="fade-right">
+          <span class="phase-tag">Phase 2 — Construction</span>
+          <h3>Bad phase. Lots of arguments — but we still stuck together.</h3>
+          <p>Load testing under stress. Merge conflicts in the schedule. We didn’t abandon the project; we debugged, refactored, and kept the build standing. Stronger foundations.</p>
+        </div>
+        <div class="phase-item phase-now" data-aos="fade-right">
+          <span class="phase-tag">Phase 3 — Handover</span>
+          <h3>Happy with each other. Good understanding of each other.</h3>
+          <p>Structure complete. Systems in sync. This is the version we’re living in — stable, maintained, and ready for the next iterations together.</p>
+        </div>
+      </div>
+      <div class="phase-note" data-aos="fade-up">
+        <p class="phase-note-label">Open note</p>
+        <p class="phase-note-text">Please forgive my small small mistakes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merge: Nagpur → Pune -->
+  <section class="section merge-section" id="merge">
+    <div class="section-label">MERGE</div>
+    <div class="content-wrap">
+      <h2 data-aos="fade-down">Nagpur Branch → Pune Main</h2>
+      <p class="merge-msg" data-aos="fade-up">Merged <code>'LongDistance'</code> branch into <code>'Main'</code> — 4 months ago.</p>
+      <div id="map" class="map-container" data-aos="zoom-in"></div>
+      <div class="distance-calc" data-aos="fade-up">
+        <h3>Distance Calculator</h3>
+        <p class="distance-value"><span id="distance-num">720</span> km</p>
+        <p class="distance-msg" id="distance-msg">Closing the gap...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interior: Pune (Living Room) -->
+  <section class="section interior" id="interior">
+    <div class="section-label">INTERIOR</div>
+    <div class="content-wrap living-room">
+      <h2 data-aos="fade-down">The Living Room — Pune</h2>
+      <p class="living-desc" data-aos="fade-up">The best part. Same city. Quality time. This is where the blueprint becomes home.</p>
+      <div class="pune-counter" data-aos="flip-left">
+        <div class="counter-label">Time spent in the same city</div>
+        <div class="counter-value">
+          <span id="days">0</span>d <span id="hours">0</span>h <span id="mins">0</span>m <span id="secs">0</span>s
+        </div>
+      </div>
+      <div class="pune-gallery" id="pune-gallery" data-aos="fade-up">
+        <h3>Last 4 months</h3>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticker Wall -->
+  <section class="section sticker-wall" id="stickers">
+    <div class="section-label">STICKER WALL</div>
+    <div class="content-wrap">
+      <h2 data-aos="fade-down"><span class="nickname">P</span>'s Art — Our Story</h2>
+      <p class="sticker-desc" data-aos="fade-up">Hover over each to see why it matters.</p>
+      <div class="sticker-collage" data-aos="fade-up">
+        <img src="photos/stickers/Stickers.jpg" alt="Stickers P made" />
+      </div>
+      <div class="sticker-board" id="sticker-board">
+        <div class="sticker" data-message="This one reminded me that you see the world in colors I never noticed.">
+          <div class="sticker-front">🎨</div>
+          <div class="sticker-back">Your most of the stickers — I still have it.</div>
+        </div>
+        <div class="sticker" data-message="You drew this on a day I was stressed. It stayed on my laptop for months.">
+          <div class="sticker-front">✨</div>
+          <div class="sticker-back">You make ordinary days special.</div>
+        </div>
+        <div class="sticker" data-message="Every small thing you make feels like a piece of you left with me.">
+          <div class="sticker-front">💝</div>
+          <div class="sticker-back">I keep everything you give me.</div>
+        </div>
+        <div class="sticker" data-message="Add your own: put images in photos/stickers/ and messages in js/main.js">
+          <div class="sticker-front">📌</div>
+          <div class="sticker-back">Want More stickers from You</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline: Parallel paths -->
+  <section class="section timeline-section" id="timeline">
+    <div class="section-label">TIMELINE</div>
+    <div class="content-wrap">
+      <h2 data-aos="fade-down">Two Branches, One Merge</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item left" data-aos="fade-right">
+          <span class="timeline-date"><span class="nickname">P</span>'s path</span>
+          <p>Architecture school → Designer</p>
+        </div>
+        <div class="timeline-item right" data-aos="fade-left">
+          <span class="timeline-date">My path</span>
+          <p>Dev journey → 3 years exp</p>
+        </div>
+        <div class="timeline-item center" data-aos="zoom-in">
+          <span class="timeline-date">Where we meet</span>
+          <p>6 years. And counting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: Production status -->
+  <footer class="footer">
+    <p>Production is stable. Uptime: 100%.</p>
+    <p class="heart">Happy 6th Anniversary, <span class="nickname">P</span>.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

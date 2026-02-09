@@ -1,0 +1,611 @@
+/* ===== The Architecture of Us — Blueprint Theme ===== */
+:root {
+  --blueprint-bg: #0a1628;
+  --blueprint-blue: #0044cc;
+  --blueprint-line: #e8f0ff;
+  --blueprint-dim: #88aaff;
+  --accent-warm: #ffb366;
+  --living-room: #2d5016;
+  --living-accent: #7cb342;
+  --white: #fff;
+  --font-script: 'Architects Daughter', cursive;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--blueprint-bg);
+  color: var(--blueprint-line);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Blueprint grid overlay */
+.blueprint-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--blueprint-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-dim) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sections share same spacing and label style */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--blueprint-dim);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.content-wrap {
+  border: 1px solid var(--blueprint-blue);
+  padding: 2rem;
+  background: rgba(0, 68, 204, 0.06);
+}
+
+.content-wrap h2 {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--blueprint-line);
+  margin-bottom: 1rem;
+}
+
+.content-wrap h3 {
+  font-size: 1rem;
+  color: var(--blueprint-dim);
+  margin-bottom: 0.75rem;
+}
+
+.content-wrap p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: rgba(232, 240, 255, 0.9);
+}
+
+code {
+  background: rgba(0, 68, 204, 0.4);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ----- Hero: Site Survey ----- */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.site-plan {
+  text-align: center;
+  border: 2px solid var(--blueprint-blue);
+  padding: 3rem;
+  background: rgba(0, 68, 204, 0.08);
+  max-width: 600px;
+}
+
+.title-block h1 {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--blueprint-line);
+  margin-bottom: 0.25rem;
+}
+
+.for-nickname {
+  font-size: 0.95rem;
+  color: var(--accent-warm);
+  margin-bottom: 0.5rem;
+}
+
+.for-nickname .nickname {
+  font-family: var(--font-script);
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--blueprint-dim);
+  margin-bottom: 1rem;
+}
+
+.version-badge {
+  font-size: 0.75rem;
+  color: var(--accent-warm);
+  border: 1px solid var(--accent-warm);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.happy-days-timer {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--blueprint-line);
+  border-radius: 8px;
+  background: rgba(0, 68, 204, 0.12);
+}
+
+.happy-days-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--blueprint-dim);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.happy-days-value {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--blueprint-line);
+  font-weight: 600;
+}
+
+.happy-days-live {
+  display: block;
+  font-size: 0.85em;
+  color: var(--accent-warm);
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+.sketch-school {
+  margin-top: 2rem;
+}
+
+.school-outline {
+  border: 1px dashed var(--blueprint-line);
+  padding: 2rem;
+  position: relative;
+}
+
+.school-outline .label {
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blueprint-bg);
+  padding: 0 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--blueprint-dim);
+}
+
+.school-outline p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ----- Structure (College + Dip) ----- */
+.structure .block {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 68, 204, 0.5);
+}
+
+.structure .block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.commit-msg {
+  font-style: italic;
+  color: var(--blueprint-dim);
+  margin-bottom: 1rem;
+}
+
+.photo-placeholder {
+  min-height: 200px;
+  border: 1px dashed var(--blueprint-dim);
+  display: grid;
+  place-items: center;
+  color: var(--blueprint-dim);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 68, 204, 0.1);
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Initial commit photo — keep it small */
+.commit-photo {
+  min-height: 160px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.commit-photo img {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.renovation-block .sub {
+  color: var(--accent-warm);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ----- Phases: Architect's summary ----- */
+.phases-wrap {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.phases-intro {
+  font-size: 0.9rem;
+  color: var(--blueprint-dim);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.phases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.phase-item {
+  border-left: 3px solid var(--blueprint-blue);
+  padding-left: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.phase-item.phase-mid {
+  border-left-color: var(--accent-warm);
+}
+
+.phase-item.phase-now {
+  border-left-color: var(--living-accent);
+}
+
+.phase-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--blueprint-dim);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.phase-item h3 {
+  font-size: 1rem;
+  color: var(--blueprint-line);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.phase-item p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.phase-note {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed var(--blueprint-line);
+  border-radius: 8px;
+  background: rgba(0, 68, 204, 0.08);
+  text-align: center;
+}
+
+.phase-note-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--blueprint-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.phase-note-text {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  color: var(--accent-warm);
+  margin-bottom: 0;
+}
+
+/* ----- Merge: Map + Distance ----- */
+.merge-section .merge-msg {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.map-container {
+  height: 320px;
+  background: rgba(0, 68, 204, 0.15);
+  border: 1px solid var(--blueprint-blue);
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.distance-calc {
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid var(--blueprint-blue);
+  background: rgba(0, 68, 204, 0.1);
+}
+
+.distance-value {
+  font-size: 2.5rem;
+  color: var(--accent-warm);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.distance-msg {
+  font-size: 0.9rem;
+  color: var(--blueprint-dim);
+}
+
+.distance-msg.welcome {
+  color: var(--living-accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ----- Interior: Pune (Living Room) — colorful ----- */
+.interior {
+  background: linear-gradient(180deg, transparent 0%, rgba(45, 80, 22, 0.2) 50%, transparent 100%);
+}
+
+.living-room {
+  border-color: var(--living-accent);
+  background: rgba(45, 80, 22, 0.15);
+}
+
+.living-room h2,
+.living-room .counter-label {
+  color: var(--living-accent);
+}
+
+.living-desc {
+  margin-bottom: 2rem;
+}
+
+.pune-counter {
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid var(--living-accent);
+  background: rgba(124, 179, 66, 0.1);
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.counter-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.counter-value {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.pune-gallery h3 {
+  margin-bottom: 1rem;
+  color: var(--blueprint-line);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  border: 1px solid var(--blueprint-dim);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 68, 204, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ----- Sticker Wall ----- */
+.sticker-desc {
+  margin-bottom: 1.5rem;
+}
+
+.sticker-collage {
+  margin-bottom: 2rem;
+  border: 2px solid var(--blueprint-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 68, 204, 0.1);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sticker-collage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.sticker-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.sticker {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.sticker-front,
+.sticker-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border: 2px solid var(--blueprint-line);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  font-size: 2rem;
+  transition: transform 0.6s ease;
+  background: rgba(0, 68, 204, 0.2);
+}
+
+.sticker-back {
+  transform: rotateY(180deg);
+  font-size: 0.8rem;
+  font-family: var(--font-script);
+  color: var(--accent-warm);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.sticker:hover .sticker-front {
+  transform: rotateY(-180deg);
+}
+
+.sticker:hover .sticker-back {
+  transform: rotateY(0);
+}
+
+/* ----- Timeline ----- */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--blueprint-blue);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 700px) {
+  .timeline-line {
+    left: 1rem;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  max-width: 45%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--blueprint-blue);
+  background: rgba(0, 68, 204, 0.08);
+}
+
+.timeline-item.left {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.timeline-item.right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.timeline-item.center {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-color: var(--living-accent);
+  background: rgba(124, 179, 66, 0.15);
+}
+
+@media (max-width: 700px) {
+  .timeline-item {
+    max-width: calc(100% - 3rem);
+    margin-left: 2.5rem !important;
+    margin-right: 0 !important;
+  }
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  color: var(--blueprint-dim);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+}
+
+/* ----- Footer ----- */
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--blueprint-blue);
+  position: relative;
+  z-index: 1;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+  color: var(--blueprint-dim);
+  font-size: 0.9rem;
+}
+
+.footer .heart {
+  color: var(--accent-warm);
+  font-family: var(--font-script);
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* AOS duration */
+[data-aos] {
+  transition-duration: 0.7s;
+}

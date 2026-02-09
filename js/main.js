@@ -189,10 +189,16 @@
       ? CONFIG.galleryImages
       : ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
 
+    function removeGalleryPlaceholder() {
+      const ph = grid.querySelector(".photo-placeholder");
+      if (ph) ph.remove();
+    }
+
     images.forEach(function (name) {
       const img = new Image();
       const src = base + name;
       img.onload = function () {
+        removeGalleryPlaceholder();
         const div = document.createElement("div");
         div.className = "gallery-item";
         img.alt = "Memory";
@@ -203,16 +209,16 @@
       img.src = src;
     });
 
-    // If no images defined or none load, show placeholder
+    // If no images load, show placeholder after a delay
     setTimeout(function () {
       if (grid.children.length === 0) {
         const placeholder = document.createElement("div");
-        placeholder.className = "photo-placeholder";
+        placeholder.className = "photo-placeholder pune-gallery-placeholder";
         placeholder.style.gridColumn = "1 / -1";
         placeholder.innerHTML = "Add photos to <strong>photos/pune/</strong> (e.g. 1.jpg, 2.jpg)";
         grid.appendChild(placeholder);
       }
-    }, 500);
+    }, 1500);
   }
   loadGallery();
 
